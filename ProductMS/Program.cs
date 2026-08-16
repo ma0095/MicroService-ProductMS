@@ -1,5 +1,6 @@
 using Business;
 using Data.Service;
+using ProductMS.DTO.Mappers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddServices();
 builder.Services.AddDataServices();
+//builder.Services.AddDTOMappers();
 
 var app = builder.Build();
 
