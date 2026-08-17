@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22
+# Visual Studio Version 18
+VisualStudioVersion = 18.10.12106.202 insiders
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAPI", "WebAPI", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -13,13 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C0D96430-5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DTOs", "DTOs", "{8F986082-5C1A-4610-BC08-350364FBD10F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{31393741-60D1-45C5-BC83-8C2DF7F0A016}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductMS.Business", "Business\ProductMS.Business.csproj", "{31393741-60D1-45C5-BC83-8C2DF7F0A016}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.Contracts", "Business.Contracts\Business.Contracts.csproj", "{4FCDB844-7B81-4F6C-8DC6-9F9690942EF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductMS.Contracts", "Business.Contracts\ProductMS.Contracts.csproj", "{4FCDB844-7B81-4F6C-8DC6-9F9690942EF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Service.Contracts", "Data.Service.Contracts\Data.Service.Contracts.csproj", "{A1E6B1B7-DCD8-4BC0-805F-FA230863F90C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductMS.Data.Service.Contracts", "Data.Service.Contracts\ProductMS.Data.Service.Contracts.csproj", "{A1E6B1B7-DCD8-4BC0-805F-FA230863F90C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Service", "Data.Service\Data.Service.csproj", "{FBF552AB-25B4-410B-AD59-A9676D6F2F7B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductMS.Data.Service", "Data.Service\ProductMS.Data.Service.csproj", "{FBF552AB-25B4-410B-AD59-A9676D6F2F7B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductMS.DTOs", "ProductMS.DTOs\ProductMS.DTOs.csproj", "{573DB1E6-E9E2-4E19-A46B-BDCE741BD763}"
 EndProject
