@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Data.Service.Contracts\ProductMS.Data.Service.Contracts.csproj" />
+    <ProjectReference Include="..\ProductMS.Data.Contracts\ProductMS.Data.Contracts.csproj" />
+    <ProjectReference Include="..\ProductMS.Framework.Extensions\ProductMS.Framework.Extensions.csproj" />
   </ItemGroup>
 
 </Project>

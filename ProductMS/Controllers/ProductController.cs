@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ProductMS.Business.Contracts;
+using ProductMS.DTOs.Products;
+using ProductMS.Framework.Extensions;
 
 namespace ProductMS.Controllers
 {
@@ -7,26 +10,33 @@ namespace ProductMS.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
+        IProductService _productService;
+        public ProductController(IProductService productService)
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-
-        public ProductController()
-        {
+            _productService = productService;
         }
-
-        [HttpGet(Name = "GetWeatherForecasts")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpPost]
+        [Route("CreateProduct")]
+        public async Task<ActionResult> CreateProduct(CreateProductRequestDTO dto)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            try
             {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                ActionStatus<ProductDTO> result = await _productService.CreateProduct(dto);
+                if (result)
+                {
+                    result.Response = new ResponseVM("CPC0001");
+                    return Ok(result);
+                }
+                else if (result.HasException)
+                {
+                    return StatusCode(500, new ActionStatus(new ResponseVM("CPCE001")));
+                }
+                return BadRequest(new ActionStatus(result.Response));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ActionStatus(new ResponseVM("CPCE001")));
+            }
         }
     }
 }

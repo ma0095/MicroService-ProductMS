@@ -1,12 +1,16 @@
-﻿using System;
+﻿using ProductMS.Data.Contracts;
+using ProductMS.Framework.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Service.Contracts
+namespace ProductMS.Data.Service.Contracts
 {
     public interface IProductDataService
     {
+        Task<ActionStatus<IProduct>> CreateProduct(IProduct result);
+
     }
 }

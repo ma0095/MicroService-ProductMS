@@ -1,12 +1,12 @@
-﻿using Business.Contracts;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using ProductMS.Business.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business
+namespace ProductMS.Business
 {
     public static partial class DependencyInjection
     {

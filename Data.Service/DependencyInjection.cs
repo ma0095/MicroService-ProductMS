@@ -1,12 +1,12 @@
-﻿using Data.Service.Contracts;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using ProductMS.Data.Service.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Service
+namespace ProductMS.Data.Service
 {
     public static partial class DependencyInjection
     {
