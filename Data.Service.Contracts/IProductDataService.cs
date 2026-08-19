@@ -11,6 +11,7 @@ namespace ProductMS.Data.Service.Contracts
     public interface IProductDataService
     {
         Task<ActionStatus<IProduct>> CreateProduct(IProduct result);
-
+        Task<ActionStatus<IProduct>> EditProduct(IProduct result);
+        Task<ActionStatus<IProduct>> GetProductById(long id);
     }
 }

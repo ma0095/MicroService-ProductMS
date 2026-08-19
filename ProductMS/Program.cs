@@ -12,8 +12,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
-//string? connectionStrings = builder.Configuration.GetConnectionString("HierarchyDB");
-//builder.Services.AddDbContext<DbContext, ProductMSContext>(options => options.UseSqlServer(connectionStrings));
+string? connectionStrings = builder.Configuration.GetConnectionString("ProductDb");
+builder.Services.AddDbContext<DbContext, ProductMSContext>(options => options.UseSqlServer(connectionStrings));
+
+
 builder.Services.AddEntities();
 builder.Services.AddDataServices();
 builder.Services.AddDTOMappers();
@@ -22,6 +24,14 @@ builder.Services.AddSwaggerGen();
 
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<ProductMSContext>();
+
+    // This applies any pending migrations and creates the database if it doesn't exist
+    context.Database.Migrate();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

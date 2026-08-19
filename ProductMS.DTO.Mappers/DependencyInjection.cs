@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using ProductMS.Data.Contracts;
 using ProductMS.DTO.Mappers.Product;
+using ProductMS.DTOs.Product;
 using ProductMS.DTOs.Products;
 using ProductMS.Framework.Mappers;
 using System;
@@ -17,7 +18,8 @@ namespace ProductMS.DTO.Mappers
         {
             services.AddScoped<APIDataMapper<IProduct, ProductDTO>, ProductMapper>();
             services.AddScoped<APIDataMapper<IProduct, CreateProductRequestDTO>, CreateProductRequestMapper>(); 
-            
+            services.AddScoped<APIDataMapper<IProduct, EditProductRequestDTO>, EditProductRequestMapper>();
+
             return services;
         }
     }
