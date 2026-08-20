@@ -88,5 +88,11 @@ namespace ProductMS.Controllers
                 return StatusCode(500, new ActionStatus(new ResponseVM("CPEE001")));
             }
         }
+        [HttpPost]
+        [Route("Test")]
+        public async Task<ActionResult> Test(EditProductRequestDTO dto)
+        {
+           return Ok(dto);
+        }
     }
 }
